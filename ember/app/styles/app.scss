@@ -1,0 +1,9 @@
+@import 'bootstrap-flex';
+
+.ember-view > .navbar {
+	margin-top: 0;
+}
+
+.ember-view > .navbar .nav-item.right > .nav-link {
+	padding: 0;
+}

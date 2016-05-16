@@ -1,0 +1,28 @@
+{{#ui-navbar onChange=(action 'changeNav') selected=currentPath as |nav|}}
+	<div class="container">
+		{{nav.brand
+			brand='JUNiA'
+			routeTo='index'
+		}}
+		{{#nav.items}}
+			{{nav.item title='Evaluation' routeTo='evaluation'}}
+			{{#nav.right}}
+				{{#if session.isAuthenticated}}
+				logged in as {{session.user.displayName}}
+				<button class="btn btn-primary btn-sm" {{action 'logout'}}>Logout</button>
+				{{else}}
+				<form class="form-inline" {{action 'login' on='submit'}}>
+					{{input class="form-control form-control-sm" placeholder="Login" value=login}}
+					{{input type="password" class="form-control form-control-sm" placeholder="Password" value=password}}
+				    <button class="btn btn-primary btn-sm" type="submit">Login</button>
+				</form>
+				{{/if}}
+			{{/nav.right}}
+		{{/nav.items}}
+  </div>
+{{/ui-navbar}}
+
+<main class="container">
+<h2 id="title">Welcome to Ember </h2>
+{{outlet}}
+</main>
