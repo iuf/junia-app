@@ -3,7 +3,6 @@ import attr from 'ember-data/attr';
 import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
-	id: attr('number'),
 	min: attr('number'),
 	max: attr('number'),
 	range: attr('number'),

@@ -43,6 +43,10 @@ export default SessionService.extend({
 		});
 	},
 
+	hasPermission (moduleName, actionName) {
+		return this.permissions[moduleName] && this.permissions[moduleName].indexOf(actionName) != -1;
+	},
+
  	user: Ember.computed('data.authenticated.data.attributes.user-id', 'isAuthenticated', function() {
 		const userId = this.get('data.authenticated.data.attributes.user-id');
 		if (this.get('isAuthenticated') && !Ember.isEmpty(userId)) {
@@ -50,9 +54,5 @@ export default SessionService.extend({
 				promise: this.get('store').findRecord('core/user', userId)
 			});
 		}
- 	}),
-
-	hasPermission (moduleName, actionName) {
-		return this.permissions[moduleName] && this.permissions[moduleName][actionName];
-	}
+ 	})
 });

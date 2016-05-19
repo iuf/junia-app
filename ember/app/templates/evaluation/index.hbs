@@ -1,0 +1,7 @@
+{{#each model as |event|}}
+  <p>{{#link-to "evaluation.event" event.slug}}{{event.name}}{{/link-to}}</p>
+{{/each}}
+
+{{#if (can "create iuf/junia/event")}}
+{{#link-to "evaluation.new"}}New event{{/link-to}}
+{{/if}}

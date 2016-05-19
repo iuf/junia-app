@@ -1,0 +1,20 @@
+<h2>Create new Event</h2>
+
+<form {{action "create" on="submit"}}>
+	<fieldset class="form-group">
+		<label for="name">Name</label>
+		{{input class="form-control" value=model.name id="name"}}
+	</fieldset>
+
+	<fieldset class="form-group">
+		<label for="start">Start</label>
+		{{input type="date" class="form-control" value=model.start placeholder="YYYY-MM-DD"}}
+	</fieldset>
+
+	<fieldset class="form-group">
+		<label for="end">End</label>
+		{{input type="date" class="form-control" value=model.end placeholder="YYYY-MM-DD"}}
+	</fieldset>
+
+	{{#ui-button type="submit"}}Submit{{/ui-button}}
+</form>
