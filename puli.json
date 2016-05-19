@@ -54,6 +54,11 @@
             "installer": "composer",
             "env": "dev"
         },
+        "iuf/junia": {
+            "install-path": "vendor/iuf/junia",
+            "installer": "composer",
+            "env": "dev"
+        },
         "justinrainbow/json-schema": {
             "install-path": "vendor/justinrainbow/json-schema",
             "installer": "composer",

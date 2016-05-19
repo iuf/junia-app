@@ -26,7 +26,8 @@
 		"puli/composer-plugin" : "@beta",
 		"puli/twig-extension" : "@beta",
 		"puli/url-generator" : "@beta",
-		"puli/discovery" : "@beta"
+		"puli/discovery" : "@beta",
+		"iuf/junia": "dev-master"
 	},
 	"extra" : {
 		"keeko" : {

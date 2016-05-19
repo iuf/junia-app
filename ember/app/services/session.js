@@ -19,7 +19,7 @@ export default SessionService.extend({
 		});
 		this.on('invalidationSucceeded', () => {
 			self.permissions = [];
-		})
+		});
 	},
 
 	updatePermissions(data) {
