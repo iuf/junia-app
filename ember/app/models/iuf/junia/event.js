@@ -4,8 +4,8 @@ import { hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
 	name: attr('string'),
-	start: attr('date'),
-	end: attr('date'),
+	start: attr('string'),
+	end: attr('string'),
 	slug: attr('string'),
 	startgroup: hasMany('iuf.junia/startgroups')
 });

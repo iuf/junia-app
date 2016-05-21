@@ -1,1 +1,20 @@
-{{outlet}}
+<div class="container">
+	<div class="row">
+		<div class="col-md-9 col-md-offset-3">
+			<h1>{{model.name}}</h1>
+		</div>
+	</div>
+	<div class="row">
+		<ul class="col-md-3 nav">
+			<li class="nav-item">{{#link-to "evaluation.event" model.slug class="nav-link"}}Summary{{/link-to}}</li>
+
+			<li class="nav-header">Individual</li>
+			<li class="nav-item">U15</li>
+
+			<li class="nav-header">Pairs</li>
+		</ul>
+		<div class="col-md-9">
+			{{outlet}}
+		</div>
+	</div>
+</div>

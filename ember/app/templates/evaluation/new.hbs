@@ -1,20 +1,38 @@
-<h2>Create new Event</h2>
+<div class="container">
+	<div class="row">
+		<div class="col-md-9 col-md-offset-3">
+			<h1>Evaluation</h1>
+		</div>
+	</div>
+	<div class="row">
+		<ul class="col-md-3">
+			<li class="nav-item">{{#link-to "evaluation" class="nav-link"}}Events{{/link-to}}</li>
+			<li class="nav-item">{{#link-to "evaluation.statistics" class="nav-link"}}Statistics{{/link-to}}</li>
+			{{#if (can "create iuf.junia/event")}}
+			<li class="nav-item">{{#link-to "evaluation.new" class="nav-link"}}New event{{/link-to}}</li>
+			{{/if}}
+		</ul>
+		<div class="col-md-9">
+			<h2>Create new Event</h2>
 
-<form {{action "create" on="submit"}}>
-	<fieldset class="form-group">
-		<label for="name">Name</label>
-		{{input class="form-control" value=model.name id="name"}}
-	</fieldset>
+			<form {{action "create" on="submit"}}>
+				<fieldset class="form-group">
+					<label for="name">Name</label>
+					{{input class="form-control" value=model.name id="name"}}
+				</fieldset>
 
-	<fieldset class="form-group">
-		<label for="start">Start</label>
-		{{input type="date" class="form-control" value=model.start placeholder="YYYY-MM-DD"}}
-	</fieldset>
+				<fieldset class="form-group">
+					<label for="start">Start</label>
+					{{input type="date" class="form-control" value=model.start placeholder="YYYY-MM-DD"}}
+				</fieldset>
 
-	<fieldset class="form-group">
-		<label for="end">End</label>
-		{{input type="date" class="form-control" value=model.end placeholder="YYYY-MM-DD"}}
-	</fieldset>
+				<fieldset class="form-group">
+					<label for="end">End</label>
+					{{input type="date" class="form-control" value=model.end placeholder="YYYY-MM-DD"}}
+				</fieldset>
 
-	{{#ui-button type="submit"}}Submit{{/ui-button}}
-</form>
+				{{#ui-button type="submit"}}Submit{{/ui-button}}
+			</form>
+		</div>
+	</div>
+</div>

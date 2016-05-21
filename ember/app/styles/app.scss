@@ -7,3 +7,9 @@
 .ember-view > .navbar .nav-item.right > .nav-link {
 	padding: 0;
 }
+
+.nav-header {
+	@extend .nav-item;
+	font-weight: bold;
+	margin-top: 10px;
+}

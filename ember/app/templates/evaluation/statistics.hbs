@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<ul class="col-md-3 nav">
+		<ul class="col-md-3">
 			<li class="nav-item">{{#link-to "evaluation" class="nav-link"}}Events{{/link-to}}</li>
 			<li class="nav-item">{{#link-to "evaluation.statistics" class="nav-link"}}Statistics{{/link-to}}</li>
 			{{#if (can "create iuf.junia/event")}}
@@ -13,9 +13,8 @@
 			{{/if}}
 		</ul>
 		<div class="col-md-9">
-			{{#each model as |event|}}
-			  <p>{{#link-to "evaluation.event" event.slug}}{{event.name}}{{/link-to}}</p>
-			{{/each}}
+			<h2>Statistics</h2>
+
 		</div>
 	</div>
 </div>
