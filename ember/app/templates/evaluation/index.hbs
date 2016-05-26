@@ -14,7 +14,11 @@
 		</ul>
 		<div class="col-md-9">
 			{{#each model as |event|}}
-			  <p>{{#link-to "evaluation.event" event.slug}}{{event.name}}{{/link-to}}</p>
+			  <p>
+				  {{#link-to "evaluation.event" event.slug}}{{event.name}}{{/link-to}}<br>
+				  Start: <span class="text-muted">{{moment-calendar event.start}}</span>
+				  End: <span class="text-muted">{{moment-calendar event.end}}</span>
+			  </p>
 			{{/each}}
 		</div>
 	</div>

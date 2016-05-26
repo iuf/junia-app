@@ -1,4 +1,21 @@
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,600);
+$font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+//$font-size-base: 0.8rem;
 @import 'bootstrap-flex';
+@import 'ember-power-select';
+
+// variables
+$iuf-background-color: #5F96E1;
+
+.fa-ul {
+	margin-left: 1.28571429em;
+}
+
+.fa-li {
+	left: -1.28571429em;
+	width: 1.28571429em;
+	line-height: 1.5;
+}
 
 .ember-view > .navbar {
 	margin-top: 0;
@@ -12,4 +29,43 @@
 	@extend .nav-item;
 	font-weight: bold;
 	margin-top: 10px;
+}
+
+.event > .row > .col-md-9 {
+	padding-right: 0;
+}
+
+td.junia-value {
+	color: #888;
+	text-align: right;
+}
+
+.event .nav, .event table {
+	font-size: 0.8rem;
+}
+
+table th {
+	font-weight: 600;
+}
+
+.intro {
+	margin-top: -15px;
+	// background-color: $iuf-background-color;
+	// color: #FFF;
+	padding: 30px 0;
+	margin-bottom: 20px;
+
+	.container {
+		h1 {
+			margin-bottom: 25px;
+		}
+	}
+
+	.lead {
+		font-size: 1.5rem;
+	}
+}
+
+.lead {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }

@@ -9,7 +9,7 @@ Router.map(function() {
   this.route('evaluation', function() {
     this.route('event', {path: '/event/:slug'}, function() {
       this.route('import');
-      this.route('startgroup', {path: '/:slug'});
+      this.route('startgroup', {path: '/:competition/:startgroup'});
     });
     this.route('new');
     this.route('statistics');

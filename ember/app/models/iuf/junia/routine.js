@@ -4,10 +4,10 @@ import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
 	name: attr('string'),
-	startgroup: belongsTo('iuf.junia/startgroups'),
-	performanceTotalStatistic: belongsTo('iuf.junia/performance-total-statistics'),
-	performanceExecutionStatistic: belongsTo('iuf.junia/performance-execution-statistics'),
-	performanceChoreographyStatistic: belongsTo('iuf.junia/performance-choreography-statistics'),
-	performanceMusicAndTimingStatistic: belongsTo('iuf.junia/performance-music-and-timing-statistics'),
-	performanceScore: hasMany('iuf.junia/performance-scores')
+	startgroup: belongsTo('iuf.junia/startgroup'),
+	performanceTotalStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	performanceExecutionStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	performanceChoreographyStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	performanceMusicAndTimingStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	performanceScores: hasMany('iuf.junia/performance-score')
 });

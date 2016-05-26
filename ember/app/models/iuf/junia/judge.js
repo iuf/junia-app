@@ -4,7 +4,7 @@ import { belongsTo } from 'ember-data/relationships';
 
 export default Model.extend({
 	position: attr('string'),
-	startgroup: belongsTo('iuf.junia/startgroups'),
-	user: belongsTo('core/users'),
-	performanceScore: belongsTo('iuf.junia/performance-scores')
+	startgroup: belongsTo('iuf.junia/startgroup'),
+	user: belongsTo('core/user'),
+	performanceScore: belongsTo('iuf.junia/performance-score')
 });

@@ -4,8 +4,13 @@ import { belongsTo, hasMany } from 'ember-data/relationships';
 
 export default Model.extend({
 	name: attr('string'),
-	competition: belongsTo('iuf.junia/competitions'),
-	event: belongsTo('iuf.junia/events'),
-	routine: hasMany('iuf.junia/routines'),
-	judge: hasMany('iuf.junia/judges')
+	slug: attr('string'),
+	competition: belongsTo('iuf.junia/competition'),
+	event: belongsTo('iuf.junia/event'),
+	performanceTotalStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	performanceExecutionStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	performanceChoreographyStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	performanceMusicAndTimingStatistic: belongsTo('iuf.junia/performance-statistic', {inverse: null}),
+	routines: hasMany('iuf.junia/routine'),
+	judges: hasMany('iuf.junia/judge')
 });

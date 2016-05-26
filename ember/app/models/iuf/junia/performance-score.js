@@ -7,6 +7,6 @@ export default Model.extend({
 	choreography: attr('number'),
 	musicAndTiming: attr('number'),
 	total: attr('number'),
-	routine: belongsTo('iuf.junia/routines'),
-	judge: belongsTo('iuf.junia/judges')
+	routine: belongsTo('iuf.junia/routine'),
+	judge: belongsTo('iuf.junia/judge')
 });

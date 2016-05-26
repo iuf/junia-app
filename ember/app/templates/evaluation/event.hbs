@@ -1,6 +1,10 @@
-<div class="container">
+<div class="container event">
 	<div class="row">
 		<div class="col-md-9 col-md-offset-3">
+			<div class="pull-right btn-group btn-group-sm">
+				{{#if (can "import iuf.junia/module")}}{{#link-to "evaluation.event.import" model.slug class="btn btn-secondary"}}Import{{/link-to}}{{/if}}
+				{{#if (can "analyze iuf.junia/module")}}<button {{action "analyze"}} class="btn btn-success-outline">Analyze</button>{{/if}}
+			</div>
 			<h1>{{model.name}}</h1>
 		</div>
 	</div>
@@ -8,10 +12,12 @@
 		<ul class="col-md-3 nav">
 			<li class="nav-item">{{#link-to "evaluation.event" model.slug class="nav-link"}}Summary{{/link-to}}</li>
 
-			<li class="nav-header">Individual</li>
-			<li class="nav-item">U15</li>
-
-			<li class="nav-header">Pairs</li>
+			{{#each-in competitions as |key comp|}}
+				<li class="nav-header">{{comp.competition.label}}</li>
+				{{#each comp.startgroups as |startgroup|}}
+				<li class="nav-item">{{#link-to "evaluation.event.startgroup" model.slug comp.competition.slug startgroup.slug class="nav-link"}} {{startgroup.name}}{{/link-to}}</li>
+				{{/each}}
+			{{/each-in}}
 		</ul>
 		<div class="col-md-9">
 			{{outlet}}

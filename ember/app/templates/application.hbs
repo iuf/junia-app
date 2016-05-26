@@ -22,6 +22,10 @@
   </div>
 {{/ui-navbar}}
 
+{{#if index}}
+{{outlet}}
+{{else}}
 <main class="container">
 {{outlet}}
 </main>
+{{/if}}

@@ -5,7 +5,7 @@
 		</div>
 	</div>
 	<div class="row">
-		<ul class="col-md-3">
+		<ul class="col-md-3 nav">
 			<li class="nav-item">{{#link-to "evaluation" class="nav-link"}}Events{{/link-to}}</li>
 			<li class="nav-item">{{#link-to "evaluation.statistics" class="nav-link"}}Statistics{{/link-to}}</li>
 			{{#if (can "create iuf.junia/event")}}
@@ -15,6 +15,9 @@
 		<div class="col-md-9">
 			<h2>Statistics</h2>
 
+			<div style="width: 800px">
+			{{high-charts mode='StockChart' chartOptions=options content=series}}
+			</div>
 		</div>
 	</div>
 </div>

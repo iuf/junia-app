@@ -1,1 +1,29 @@
-{{outlet}}
+<h2>Import Data</h2>
+
+<form {{action "upload" on="submit"}}>
+	{{#if error}}
+	<div class="alert alert-warning" role="alert">
+		{{{error}}}
+	</div>
+	{{/if}}
+
+	<fieldset class="form-group">
+		<label for="file">File</label>
+		{{#pl-uploader for="upload" extensions="csv" onfileadd="addFile" as |queue dropzone|}}
+			{{#if queue.length}}
+				{{file.name}}
+    		{{else}}
+      		<a id="upload" class="btn btn-primary">Select File</a>
+    		{{/if}}
+		{{/pl-uploader}}
+	</fieldset>
+
+	<fieldset class="form-group">
+		<label for="name">Importer</label>
+		{{#power-select options=model selected=importer onchange=(action (mut importer)) as |importer|}}
+			{{importer.name}}
+    	{{/power-select}}
+	</fieldset>
+
+	{{#ui-button type="submit"}}Import{{/ui-button}}
+</form>

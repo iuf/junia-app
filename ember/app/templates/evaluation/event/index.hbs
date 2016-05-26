@@ -1,0 +1,73 @@
+<h2>Summary</h2>
+
+{{#if model.startgroups}}
+<div class="table-responsive">
+<table class="table table-striped table-sm table-bordered">
+<thead class="thead-default">
+	<tr>
+		<th>Performance Score</th>
+		<th>∅ MIN</th>
+		<th>∅ MAX</th>
+		<th>∅ RANGE</th>
+		<th>∅ MD</th>
+		<th>∅ AVG</th>
+		<th>∅ SD</th>
+		<th>∅ V</th>
+		<th>∅ VC</th>
+	</tr>
+</thead>
+<tbody>
+	<tr>
+		<th scope="row" class="thead-default">Total</th>
+		<td class="junia-value">{{round model.performanceTotalStatistic.min 2}}</td>
+		<td class="junia-value">{{round model.performanceTotalStatistic.max 2}}</td>
+		<td class="junia-value">{{round model.performanceTotalStatistic.range 2}}</td>
+		<td class="junia-value">{{round model.performanceTotalStatistic.median 2}}</td>
+		<td class="junia-value">{{round model.performanceTotalStatistic.average 2}}</td>
+		<td class="junia-value">{{round model.performanceTotalStatistic.standardDeviation 2}}</td>
+		<td class="junia-value">{{round model.performanceTotalStatistic.variance 2}}</td>
+		<td class="junia-value">{{round model.performanceTotalStatistic.variabilityCoefficient 2}}%</td>
+	</tr>
+	<tr>
+		<th scope="row" class="table-success">Execution</th>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.min 2}}</td>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.max 2}}</td>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.range 2}}</td>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.median 2}}</td>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.average 2}}</td>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.standardDeviation 2}}</td>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.variance 2}}</td>
+		<td class="junia-value">{{round model.performanceExecutionStatistic.variabilityCoefficient 2}}%</td>
+	</tr>
+	<tr>
+		<th scope="row" class="table-info">Choreography</th>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.min 2}}</td>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.max 2}}</td>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.range 2}}</td>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.median 2}}</td>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.average 2}}</td>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.standardDeviation 2}}</td>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.variance 2}}</td>
+		<td class="junia-value">{{round model.performanceChoreographyStatistic.variabilityCoefficient 2}}%</td>
+	</tr>
+	<tr>
+		<th scope="row" class="table-warning">Music and Timing</th>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.min 2}}</td>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.max 2}}</td>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.range 2}}</td>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.median 2}}</td>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.average 2}}</td>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.standardDeviation 2}}</td>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.variance 2}}</td>
+		<td class="junia-value">{{round model.performanceMusicAndTimingStatistic.variabilityCoefficient 2}}%</td>
+	</tr>
+</tbody>
+</table>
+</div>
+
+<div style="width: 800px">
+{{high-charts chartOptions=chartOptions content=series}}
+</div>
+{{else}}
+Please {{#link-to "evaluation.event.import" model.slug}}import{{/link-to}} data
+{{/if}}
