@@ -2,14 +2,14 @@ import Ember from 'ember';
 import { Ability } from 'ember-can';
 
 export default Ability.extend({
-	canRead: Ember.computed(function() {
-		return this.get('session').hasPermission('iuf/junia', 'routine-read');
-	}),
-	canList: Ember.computed(function() {
-		return this.get('session').hasPermission('iuf/junia', 'routine-list');
+	canPaginate: Ember.computed(function() {
+		return this.get('session').hasPermission('iuf/junia', 'routine-paginate');
 	}),
 	canCreate: Ember.computed(function() {
 		return this.get('session').hasPermission('iuf/junia', 'routine-create');
+	}),
+	canRead: Ember.computed(function() {
+		return this.get('session').hasPermission('iuf/junia', 'routine-read');
 	}),
 	canUpdate: Ember.computed(function() {
 		return this.get('session').hasPermission('iuf/junia', 'routine-update');

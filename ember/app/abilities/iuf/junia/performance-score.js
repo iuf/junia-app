@@ -2,14 +2,14 @@ import Ember from 'ember';
 import { Ability } from 'ember-can';
 
 export default Ability.extend({
-	canRead: Ember.computed(function() {
-		return this.get('session').hasPermission('iuf/junia', 'performance_score-read');
-	}),
-	canList: Ember.computed(function() {
-		return this.get('session').hasPermission('iuf/junia', 'performance_score-list');
+	canPaginate: Ember.computed(function() {
+		return this.get('session').hasPermission('iuf/junia', 'performance_score-paginate');
 	}),
 	canCreate: Ember.computed(function() {
 		return this.get('session').hasPermission('iuf/junia', 'performance_score-create');
+	}),
+	canRead: Ember.computed(function() {
+		return this.get('session').hasPermission('iuf/junia', 'performance_score-read');
 	}),
 	canUpdate: Ember.computed(function() {
 		return this.get('session').hasPermission('iuf/junia', 'performance_score-update');
